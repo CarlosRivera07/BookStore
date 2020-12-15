@@ -1,0 +1,16 @@
+<section class="mb-5" ng-controller="Book as prod">
+    <div class="row">
+        <div class="col-md-6 mb-4 md-md-0">
+            <div class="row">
+                <img class="img rounded img-fluid" ng-src="{{prod.detail.img}}" alt="">   
+            </div>
+        </div>
+        <div class="col-md-6">
+            <h1 style="text-align: center;" class="text-primary" >{{prod.detail.Titulo}}</h1>
+            <h3 style="text-align: center;">{{prod.detail.autor}}</h3>
+            <h5 style="text-align: center;">{{prod.detail.Editorial}}</h5>
+            <hr>
+            <p>{{prod.detail.descripcion}}</p>
+        </div>
+    </div>
+</section>

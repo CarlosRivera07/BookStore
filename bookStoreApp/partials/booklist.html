@@ -1,0 +1,32 @@
+
+    <div class="container " style="margin-top: 2cm;" ng-controller="Booklist as products">
+      <div class="form-group row && col-md-12">
+        <label for="bookSearch" class="col-sm-2 col-form-label"><strong>Buscar</strong></label>
+        <div class="col-sm-5">
+          <input type="text" ng-model="bookSearch"  placeholder="Ingresa tu libro" class="form-control" id="bookSearch" value="" >
+        </div>
+        <label for="bookOrder" class="col-sm-0 col-from-label"><strong>Ordenar</strong></label>
+          <div class="col-sm-2">
+            <select class="form-control " id="bookOrder" ng-model="bookOrder">
+              <option>Titulo</option>
+              <option>Editorial</option>
+            </select>
+        </div>
+      </div>
+      <hr>
+      <ul >
+          <li class="row" ng-repeat="book in products.books | filter:bookSearch | orderBy:bookOrder" ng-click="products.go(book._id)">
+            <div class="col-md-2">
+              <img class="img" ng-src="{{book.img}}" alt="">
+            </div>
+            <div class="col-md-8">
+              <a href=""><h3>{{book.Titulo}}</h3></a>
+              <h5>{{book.Editorial}}</h5>
+            </div>
+            <div class="col-md-2">
+                <h6 class="font-weight-bold my-1">{{book.precio | currency}}</h6>
+            </div>
+            
+          </li>
+      </ul>
+    </div>
